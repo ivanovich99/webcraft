@@ -7,7 +7,6 @@ email_bp = Blueprint('email', __name__)
 
 # Environment variables for email credentials
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
-print(os.environ.get('EMAIL_USER'))
 
 # Predefined recipient email
 RECIPIENT_EMAIL = "ivanovich.chiu@cetys.edu.mx"

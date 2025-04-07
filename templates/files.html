@@ -5,25 +5,61 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-btn">← Back to Dashboard</a>
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="title">🎓 WebCraft</div>
+        <div class="nav-links">
+            <a href="/">Video</a>
+            <a href="/files">Files</a>
+            <a href="/email">Email</a>
+        </div>
+    </div>
 
+    <div class="container">
         <h1>📁 File Upload & Download</h1>
         <form method="post" enctype="multipart/form-data">
-            <input type="file" name="file" required>
-            <button type="submit">Upload</button>
+            <div class="file-upload">
+                <label for="file" class="custom-file-label">Choose a file...</label>
+                <input type="file" id="file" name="file" required onchange="updateFileName()">
+            </div>
+            <button type="submit" class="btn-upload">Upload</button>
         </form>
         <hr>
         <h2>Available Files:</h2>
-        <ul>
+        <ul class="file-list">
             {% for file in files %}
             <li>
-                {{ file }} — <a class="download-link" href="{{ url_for('uploaded_file', filename=file) }}" download>Download</a>
+                <span class="file-icon">
+                    {% if file.endswith('.pdf') %}
+                    📄
+                    {% elif file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png') %}
+                    🖼️
+                    {% elif file.endswith('.mp4') %}
+                    🎥
+                    {% else %}
+                    📁
+                    {% endif %}
+                </span>
+                {{ file }}
+                <a class="btn-download" href="{{ url_for('uploaded_file', filename=file) }}" download>Download</a>
             </li>
             {% else %}
             <li>No files yet.</li>
             {% endfor %}
         </ul>
     </div>
+
+    <script>
+        // Update the label with the selected file name
+        function updateFileName() {
+            const fileInput = document.getElementById('file');
+            const fileLabel = document.querySelector('.custom-file-label');
+            if (fileInput.files.length > 0) {
+                fileLabel.textContent = fileInput.files[0].name;
+            } else {
+                fileLabel.textContent = "Choose a file...";
+            }
+        }
+    </script>
 </body>
 </html>

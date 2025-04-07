@@ -5,10 +5,18 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-btn">← Back to Dashboard</a>
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="title">🎓 WebCraft</div>
+        <div class="nav-links">
+            <a href="/">Video</a>
+            <a href="/files">Files</a>
+            <a href="/email">Email</a>
+        </div>
+    </div>
 
-        <h1>📧 Send an Email</h1>
+    <div class="container">
+       <h1>📧 Send an Email</h1>
         <form method="post">
             <label for="subject">Subject:</label>
             <input type="text" id="subject" name="subject" required>

@@ -18,6 +18,34 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Toolbar styling */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007BFF;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.toolbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.toolbar .nav-links a:hover {
+    color: #d1ecf1;
+}
+
 /* Container styling */
 .container {
     max-width: 800px;
@@ -128,6 +156,16 @@ label {
     margin-top: 1rem;
 }
 
+/* Input styling */
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
 /* Submit button styling */
 button[type="submit"] {
     background: #007BFF;
@@ -142,4 +180,97 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background: #0056b3;
+}
+
+/* Download button styling */
+.btn-download {
+    background-color: #007BFF;
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #0056b3;
+}
+
+/* File upload styling */
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.custom-file-label {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.custom-file-label:hover {
+    background-color: #e9ecef;
+    border-color: #007BFF;
+    color: #007BFF;
+}
+
+.btn-upload {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover {
+    background-color: #218838;
+}
+
+/* File list styling */
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.file-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background-color: #f8f9fa;
+}
+
+.file-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
 }
