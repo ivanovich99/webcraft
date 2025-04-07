@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebCraft Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">🎓 WebCraft Dashboard</div>
+
+    <div class="container">
+        <div class="feature">
+            <h2>🎬 Watch "YourVoice"</h2>
+            <video id="videoPlayer" controls>
+                <source src="/video/YourVoice.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <a class="download-link" href="/video/YourVoice.mp4" download>⬇ Download "YourVoice.mp4"</a>
+        </div>
+
+        <div class="feature">
+            <h2>📁 Upload or Download Files</h2>
+            <a class="btn" href="/files">Open File Manager</a>
+        </div>
+        <div class="feature">
+            <h2>📧 Send an Email</h2>
+            <a class="btn" href="/email">Open Email Sender</a>
+        </div>
+    </div>
+
+    <script>
+        // Exit fullscreen if user wants to download after watching
+        const video = document.getElementById('videoPlayer');
+        video.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                console.log("Exited fullscreen.");
+            }
+        });
+    </script>
+</body>
+</html>

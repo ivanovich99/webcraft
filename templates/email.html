@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebCraft - Send Email</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn">← Back to Dashboard</a>
+
+        <h1>📧 Send an Email</h1>
+        <form method="post">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+
+    <!-- JavaScript for pop-up alerts -->
+    <script>
+        // Check if there are any flash messages
+        const flashMessage = "{{ get_flashed_messages()[0] if get_flashed_messages() else '' }}";
+        if (flashMessage) {
+            alert(flashMessage); // Display the flash message as a pop-up alert
+        }
+    </script>
+</body>
+</html>
